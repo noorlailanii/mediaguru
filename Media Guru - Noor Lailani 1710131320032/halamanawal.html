@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Halaman Guru</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="styles.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+        <script type="module">
+            import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js";
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+      
+            const firebaseConfig = {
+                apiKey: "AIzaSyBF_KGd5CBew2HCO-ZFs3LIte7JE5xuWxw",
+                authDomain: "bangunruang-270999.firebaseapp.com",
+                databaseURL: "https://bangunruang-270999-default-rtdb.firebaseio.com",
+                projectId: "bangunruang-270999",
+                storageBucket: "bangunruang-270999.appspot.com",
+                messagingSenderId: "733243158000",
+                appId: "1:733243158000:web:86a26bd3e3ca74b5b34135",
+                measurementId: "G-B725RS3VHF"
+            };
+      
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            let logoutButton = document.getElementById("logout-button");
+            console.log(logoutButton);
+
+            document.getElementById("namaLogin").innerHTML = sessionStorage.getItem("namaSiswa")
+
+            logoutButton.addEventListener("click", (e) => {
+              const auth = getAuth(app);
+              signOut(auth)
+                .then(() => {
+                // alert("sukses logout");
+                location.href = "index.html";
+                })
+                .catch((error) => {});
+            });
+          </script>
+    </head>
+    <body class="sb-nav-fixed" style="background-image: url(bgguru.png);">
+        <nav class="sb-topnav navbar navbar-expand navbar-light bg-light">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3">
+                <img src="bangunruang.png" style="width: 20%;">
+                Halaman Guru - Bangun Ruang
+            </a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="btn btn-primary" href="index.html">Keluar</a>
+
+        </nav>
+        <div  style="border: none;">
+                <main>
+                    <div class="container-fluid p-3">
+                        <div class="row">
+                            <div class="col-lg-12">
+
+                                <div class="card-body atas-kuis">
+                                    <h1 class="text-center p-1 mt-5" style=" font-size: 220%;">Halaman Guru <br>Bangun Ruang
+                                    <br><span style="font-size: 70%;">Kelas V SD</span></h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row p-2" style="margin-left: 5%; margin-top: 5%;">
+                            <div class="col-lg-4">
+                                <div class="mx-auto mb-5 mb-lg-0 ms-sm-5">
+                                    <div class="features-icons-icon d-flex">
+                                    <a href="nilaisiswa.html"   style="text-decoration: none;"><img style="width: 60%;" class="menu" src="nilaisiswa.png"></img></div>
+                                    <br><h3 class="px-4">Nilai Siswa</h3></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class=" mx-auto mb-5 mb-lg-0 ms-sm-5">
+                                    <div class=" d-flex">
+                                        <a href="jawabansiswakuis.html" style="text-decoration: none;"><img style="width: 60%;" class="menu" src="jawabansiswa.png"></img></div>
+                                    <br><h3 class="px-4">Jawaban Siswa</h3></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="mb-3 mb-lg-0 ms-sm-5">
+                                    <div class="features-icons-icon d-flex">
+                                    <a href="kkm.html" style="text-decoration: none;"><img style="width: 60%;" class="menu" src="kkm.png"></img></div>
+                                    <br><h3 class="px-4">Setting KKM</h3></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+        </div>
+                
+        <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="js/datatables-simple-demo.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
